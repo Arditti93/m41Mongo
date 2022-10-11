@@ -15,11 +15,11 @@ class Movie {
         return await collection.find({}).toArray();
     } 
 
-    //TODO add delete method
+    //TODO add deleteOne method
     async delete (collection) {
         //
     }
-    //TODO: add update method
+    //TODO: add updateOne method
     async update (collection) {
         //
     }
