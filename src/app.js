@@ -19,11 +19,14 @@ const app = async (yargsObject) => {
 
         //TODO: add and call update method from Moive class
         } else if (yargsObject.update){
-            //
-
+            const updateMovie = new Movie(yargsObject.title, yargsObject.actor)
+            await updateMovie.update(collection, yargsObject.key, yargsObject.filter)
+            console.table(await updateMovie.read(collection))
         //TODO: add and call delete method from Moive class
         } else if (yargsObject.delete) {
-            //
+            const deleteMovie = new Movie(yargsObject.title, yargsObject.actor)
+            await deleteMovie.delete(collection)
+            console.table(await deleteMovie.read(collection))   
         } else {
             console.log("incorrect command")
         }

@@ -17,11 +17,12 @@ class Movie {
 
     //TODO add deleteOne method
     async delete (collection) {
-        //
+        await collection.deleteOne(this)
     }
+    
     //TODO: add updateOne method
-    async update (collection) {
-        //
+    async update (collection, key, filter) {
+        await collection.updateOne({ [key]: filter }, { $set: this });
     }
 }
 
